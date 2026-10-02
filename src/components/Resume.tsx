@@ -68,6 +68,16 @@ export default function Resume() {
               <strong>Phone:</strong>{" "}
               <a href="tel:0244203222">0244203222</a>
             </li>
+            <li>
+              <strong>Snapchat:</strong>{" "}
+              <a
+                href="https://snapchat.com/t/O2P7Amd8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @buggy_bigsam
+              </a>
+            </li>
           </ul>
         </div>
 

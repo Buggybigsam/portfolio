@@ -58,6 +58,7 @@ export const PORTFOLIO_DATA = {
     github: "https://github.com/Buggybigsam",
     linkedin: "https://www.linkedin.com/in/sam-ebenezer-6115b540b/",
     instagram: "https://www.instagram.com/buggy_bigsam?stkn=MTB5bmwwd2JwZ3poMg%3D%3D&utm_source=qr",
+    snapchat: "https://snapchat.com/t/O2P7Amd8",
     profileImage: "/images/ebenezer-sam.png",
     stats: [
       { label: "Production Projects", value: 12, suffix: "+" },

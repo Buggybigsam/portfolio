@@ -1070,6 +1070,75 @@ main {
     color: var(--text-muted);
 }
 
+.contact__socials-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.contact__socials-heading {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.contact__socials-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    justify-content: center;
+}
+
+.contact__social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 0.95rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.03);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 200ms ease;
+}
+
+.contact__social-link i {
+    font-size: 1.15rem;
+}
+
+.contact__social-link:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent-strong);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.contact__social-link--snapchat:hover {
+    background: rgba(255, 252, 0, 0.2);
+    border-color: rgba(234, 179, 8, 0.6);
+    color: #b45309;
+}
+
+.contact__social-link--instagram:hover {
+    background: rgba(225, 48, 108, 0.12);
+    border-color: rgba(225, 48, 108, 0.4);
+    color: #e1306c;
+}
+
+.contact__social-link--whatsapp:hover {
+    background: rgba(37, 211, 102, 0.14);
+    border-color: rgba(37, 211, 102, 0.4);
+    color: #15803d;
+}
+
 /* Footer */
 .footer {
     max-width: var(--max-width);

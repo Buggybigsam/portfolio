@@ -147,6 +147,62 @@ export default function Contact() {
               </div>
               <p className="form__note">Your message will be sent directly to me.</p>
             </form>
+
+            <div className="contact__socials-section">
+              <span className="contact__socials-heading">Direct Socials & Messaging</span>
+              <div className="contact__socials-list">
+                <a
+                  href="https://snapchat.com/t/O2P7Amd8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact__social-link contact__social-link--snapchat"
+                  aria-label="Snapchat"
+                >
+                  <i className="bx bxl-snapchat"></i>
+                  <span>Snapchat</span>
+                </a>
+                <a
+                  href="https://www.instagram.com/buggy_bigsam?stkn=MTB5bmwwd2JwZ3poMg%3D%3D&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact__social-link contact__social-link--instagram"
+                  aria-label="Instagram"
+                >
+                  <i className="bx bxl-instagram"></i>
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href="https://wa.me/233244203222"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact__social-link contact__social-link--whatsapp"
+                  aria-label="WhatsApp"
+                >
+                  <i className="bx bxl-whatsapp"></i>
+                  <span>WhatsApp</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/sam-ebenezer-6115b540b/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact__social-link"
+                  aria-label="LinkedIn"
+                >
+                  <i className="bx bxl-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a
+                  href="https://github.com/Buggybigsam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact__social-link"
+                  aria-label="GitHub"
+                >
+                  <i className="bx bxl-github"></i>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
           </article>
         </div>
       </section>

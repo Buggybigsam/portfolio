@@ -51,6 +51,16 @@ export default function Footer() {
           </li>
           <li>
             <a
+              href="https://snapchat.com/t/O2P7Amd8"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Snapchat"
+            >
+              <i className="bx bxl-snapchat"></i>
+            </a>
+          </li>
+          <li>
+            <a
               href="https://wa.me/233244203222"
               target="_blank"
               rel="noopener noreferrer"
