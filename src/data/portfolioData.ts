@@ -260,15 +260,15 @@ export const PORTFOLIO_DATA = {
 
   projects: [
     {
-      id: "smart-booking",
-      title: "Smart Booking System",
+      id: "craftconnect",
+      title: "CraftConnect",
       subtitle: "Location-Based Artisan Discovery & Appointment Platform",
       category: "Full-Stack",
-      image: "/images/smart-booking.jpg",
+      image: "/images/craftconnect.png",
       shortDescription:
-        "A practical web application connecting clients with verified local artisans. Features real-time location mapping, direct appointment booking, escrow payments, and customer dashboards.",
+        "A practical web application connecting clients with verified local Ghanaian artisans. Features real-time location mapping, direct appointment booking, secure payments, and customer dashboards.",
       fullDescription:
-        "The Smart Booking System addresses a real everyday challenge: finding reliable, vetted artisans for household repairs and skilled services. Built with Next.js, PostgreSQL, and Google Maps, clients can search artisans by proximity, review past job ratings, pick an available calendar slot, and pay via secure escrow. Artisans get a dedicated portal to manage jobs, track earnings, and handle client inquiries.",
+        "CraftConnect addresses a real everyday challenge: finding reliable, vetted artisans for household repairs and skilled services. Built with Next.js, PostgreSQL, and Google Maps, clients can search artisans by proximity, review past job ratings, pick an available calendar slot, and pay securely.",
       features: [
         "Interactive Map with Live Artisan Geolocation",
         "Two Dedicated Portals: Customer Booking & Artisan Management",

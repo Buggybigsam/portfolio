@@ -17,13 +17,13 @@ interface ProjectItem {
 const PROJECTS: ProjectItem[] = [
   {
     id: "craftconnect",
-    title: "CraftConnect — Artisan Booking",
-    desc: "Smart booking and service discovery platform empowering local Ghanaian artisans and clients.",
-    image: "/images/smart-booking.jpg",
+    title: "CraftConnect",
+    desc: "Smart booking platform for verified local artisans in Ghana with Paystack payments.",
+    image: "/images/craftconnect.png",
     url: "https://github.com/Buggybigsam/CraftConnect",
     tags: ["TypeScript", "Next.js", "Tailwind CSS"],
     fullDesc:
-      "A full-stack platform built to bridge the gap between skilled local artisans and prospective customers across Ghana. Provides real-time appointment booking, direct messaging, verified portfolio showcases, and responsive trade management.",
+      "A full-stack platform built to bridge the gap between skilled local artisans and prospective customers across Ghana. Provides real-time appointment booking, direct messaging, verified portfolio showcases, and secure Paystack payments.",
     github: "https://github.com/Buggybigsam/CraftConnect",
   },
   {
