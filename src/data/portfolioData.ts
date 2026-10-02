@@ -281,8 +281,8 @@ export const PORTFOLIO_DATA = {
         "Ensuring rapid map rendering and accurate geolocation distance filtering when searching across dense neighborhoods with hundreds of artisans.",
       solutions:
         "Used geospatial coordinate indexing and bounding box queries on the database layer to return nearby artisans in under 35ms without taxing the client browser.",
-      liveUrl: "https://smartbooking.sasulabs.me",
-      githubUrl: "https://github.com/sasuo/smart-booking-system",
+      liveUrl: "https://github.com/Buggybigsam/CraftConnect",
+      githubUrl: "https://github.com/Buggybigsam/CraftConnect",
       featured: true,
     },
     {
@@ -308,8 +308,8 @@ export const PORTFOLIO_DATA = {
         "Handling varying lighting conditions and accidental double-scans when groups of people walked past the verification camera.",
       solutions:
         "Implemented adaptive histogram equalization for lighting balance and a 3-second debounce window per identity to ensure one clean scan per session.",
-      liveUrl: "https://sentinel-ai.sasulabs.me",
-      githubUrl: "https://github.com/sasuo/face-recognition-attendance",
+      liveUrl: "https://github.com/Buggybigsam",
+      githubUrl: "https://github.com/Buggybigsam",
       featured: true,
     },
     {
@@ -334,8 +334,8 @@ export const PORTFOLIO_DATA = {
         "Handling long-running model queries without freezing the user interface or dropping active connections.",
       solutions:
         "Used asynchronous server-sent events (SSE) and worker queues to stream tokens smoothly to the frontend as they generate.",
-      liveUrl: "https://synethesia.sasulabs.me",
-      githubUrl: "https://github.com/sasuo/synethesia-ai-workflow",
+      liveUrl: "https://sainttechsolutions.github.io/",
+      githubUrl: "https://github.com/Buggybigsam",
       featured: true,
     },
     {
@@ -360,8 +360,8 @@ export const PORTFOLIO_DATA = {
         "Preventing duplicate charges during network drops or repeated user clicks on checkout buttons.",
       solutions:
         "Enforced unique client-side idempotency keys backed by atomic Redis lock leases before initiating payment gateway charges.",
-      liveUrl: "https://aetherflow.sasulabs.me",
-      githubUrl: "https://github.com/sasuo/aetherflow-core",
+      liveUrl: "https://github.com/Buggybigsam",
+      githubUrl: "https://github.com/Buggybigsam",
       featured: true,
     },
   ],
@@ -370,7 +370,7 @@ export const PORTFOLIO_DATA = {
     {
       period: "2024 — Present",
       role: "Software Developer & Systems Lead",
-      organization: "Sasulabs / Independent Tech Lab",
+      organization: "Saint Tech Solutions / Independent Tech Lab",
       location: "Accra, Ghana (Remote)",
       description:
         "Leading the development of client web applications, custom management systems, and computer vision projects.",

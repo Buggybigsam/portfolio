@@ -423,12 +423,15 @@ main {
 }
 
 .hero__orb {
+    position: absolute;
     width: 320px;
     height: 320px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(59, 126, 255, 0.35), rgba(160, 92, 255, 0.25));
     filter: blur(24px);
     opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
     transition: transform 0.2s ease-out;
 }
 
@@ -1391,13 +1394,14 @@ main {
 
 @media (max-width: 1080px) {
     .panel {
-        padding: 6rem 2rem;
+        padding: 5.5rem 2rem;
     }
 
     .hero {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
         text-align: center;
+        padding-top: 8rem;
     }
 
     .hero__name {
@@ -1413,17 +1417,26 @@ main {
     }
 
     .hero__visual {
-        height: 360px;
+        height: auto;
+        min-height: 260px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .hero__card {
         position: relative;
         margin: 0 auto;
         inset: unset;
+        width: min(320px, 90%);
+        min-width: unset;
+        z-index: 1;
     }
 
     .hero__card--primary {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
     }
 
     .about__grid,
@@ -1441,22 +1454,66 @@ main {
 
     .projects__list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 2rem;
+        gap: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .glow {
+        width: 240px;
+        height: 240px;
+        filter: blur(80px);
+        opacity: 0.16;
+    }
+
+    .glow--top {
+        top: -60px;
+        right: -30px;
+    }
+
+    .glow--bottom {
+        bottom: -60px;
+        left: -30px;
+    }
+
+    /* On mobile/touch devices, ensure project cards always display details */
+    .project__overlay {
+        opacity: 1;
+        background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.5) 60%, transparent 100%);
+    }
+
+    .project__desc,
+    .project__tags,
+    .project__open {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .project__open {
+        background: rgba(59, 126, 255, 0.35);
+        border-color: rgba(59, 126, 255, 0.5);
     }
 }
 
 @media (max-width: 560px) {
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+        width: 100%;
+    }
+
     body {
         font-size: 0.95rem;
     }
 
     .panel {
-        padding: 5rem 1.5rem;
+        padding: 4.5rem 1.25rem;
         text-align: center;
     }
 
     .section__header {
         text-align: center;
+        margin-bottom: 2.5rem;
     }
 
     .about__statement,
@@ -1480,17 +1537,38 @@ main {
     }
 
     .hero__title {
-        font-size: clamp(2.5rem, 8vw, 3.8rem);
+        font-size: clamp(2.3rem, 7.5vw, 3.4rem);
     }
 
     .hero__name {
         margin-bottom: 0.9rem;
-        letter-spacing: 0.16em;
-        gap: 0.5rem;
+        letter-spacing: 0.14em;
+        gap: 0.4rem;
+        font-size: clamp(1.4rem, 5vw, 1.9rem);
     }
 
     .hero__name::after {
-        min-width: 50px;
+        min-width: 30px;
+    }
+
+    .hero__orb {
+        width: 220px;
+        height: 220px;
+    }
+
+    .hero__card {
+        padding: 1.5rem;
+        width: min(290px, 94%);
+        font-size: 0.72rem;
+    }
+
+    .hero__stats {
+        gap: 1.25rem;
+        justify-content: center;
+    }
+
+    .hero__stat-num {
+        font-size: 1.5rem;
     }
 
     .hero__cta {
@@ -1501,6 +1579,7 @@ main {
     .button-group.button-group--even {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
 
     .button-group.button-group--even .button {
@@ -1512,7 +1591,7 @@ main {
 
     .capability,
     .contact__card {
-        padding: 2rem 1.5rem;
+        padding: 1.75rem 1.25rem;
     }
 
     .projects__list {

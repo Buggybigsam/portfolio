@@ -9,7 +9,14 @@ export default function Footer() {
         </p>
         <p className="footer__studio">
           Founder of{" "}
-          <span style={{ color: "var(--accent)", fontWeight: 500 }}>Saint Tech</span>
+          <a
+            href="https://sainttechsolutions.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "var(--accent)", fontWeight: 600 }}
+          >
+            Saint Tech Solutions ↗
+          </a>
         </p>
         <ul className="footer__socials" aria-label="Social links">
           <li>

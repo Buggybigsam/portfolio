@@ -40,7 +40,7 @@ export default function About() {
             />
           </div>
           <p className="about__avatar-caption">
-            Ebenezer A.A Sam — IT & Full‑Stack Developer
+            Ebenezer A.A Sam - IT & Full‑Stack Developer
           </p>
         </div>
       </div>

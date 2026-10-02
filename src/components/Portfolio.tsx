@@ -75,7 +75,7 @@ const PROJECTS: ProjectItem[] = [
     title: "Saint Tech Solutions",
     desc: "Enterprise software, digital infrastructure, and custom web applications by Saint Tech.",
     image: "/assets/images/image.png",
-    url: "https://github.com/Buggybigsam",
+    url: "https://sainttechsolutions.github.io/",
     tags: ["Architecture", "Next.js", "Cloud"],
     fullDesc:
       "Client solutions and scalable web systems engineered under Saint Tech, delivering reliable microservices, database schemas, and modern user experiences.",
