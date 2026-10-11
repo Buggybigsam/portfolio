@@ -22,9 +22,9 @@ export default function Home() {
         <About />
         <Capabilities />
         <TechStack />
-        <Resume />
         <Portfolio />
         <GitHubRepos />
+        <Resume />
         <Testimonials />
         <Marquee />
         <Contact />

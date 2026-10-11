@@ -140,8 +140,8 @@ export default function GitHubRepos() {
       <div className="section__header">
         <p className="section__eyebrow">Open Source</p>
         <h2 className="section__title">Code in the wild.</h2>
+        <p className="text-secondary mt-3">Live from my GitHub repositories, updated automatically.</p>
       </div>
-      <p className="section__sub">Live from my GitHub, updated automatically.</p>
 
       <div className="repos__grid" id="repos-grid" aria-live="polite">
         {loading && (
