@@ -30,7 +30,7 @@ const PROJECTS: ProjectItem[] = [
     id: "apartment-booking",
     title: "Apartment Booking Platform",
     desc: "Modern accommodation and property reservation system for apartment owners and guests.",
-    image: "/images/cloud-fintech.jpg",
+    image: "/images/apartment-booking.jpg",
     url: "https://github.com/Buggybigsam/Apartment-Booking-Platform",
     tags: ["TypeScript", "React", "REST API"],
     fullDesc:
@@ -41,7 +41,7 @@ const PROJECTS: ProjectItem[] = [
     id: "nova-stitch-studio",
     title: "Nova Stitch Studio",
     desc: "Custom digital studio application for tailoring, fashion ateliers, and bespoke apparel designers.",
-    image: "/assets/images/p2.png",
+    image: "/assets/images/nova-stitch.png",
     url: "https://github.com/Buggybigsam/nova-stitch-studio",
     tags: ["TypeScript", "Next.js", "PostgreSQL"],
     fullDesc:
@@ -51,23 +51,23 @@ const PROJECTS: ProjectItem[] = [
   {
     id: "artisan-management-capstone",
     title: "Smart Booking System for Local Artisans",
-    desc: "Capstone project smart booking platform designed for trade artisans in Ghana.",
-    image: "/assets/images/p1.png",
+    desc: "Capstone project smart booking platform designed for trade artisans in Ghana (ArtisanBook).",
+    image: "/images/artisanbook.jpg",
     url: "https://github.com/Buggybigsam/Smart-Booking-System-for-local-Artisans-",
     tags: ["TypeScript", "System Architecture", "SQL"],
     fullDesc:
-      "Developed as a comprehensive university capstone project at Ghana Communication Technology University. Solves scheduling collisions, ensures timely milestone delivery, and simplifies service coordination between artisans and households.",
+      "Developed as a comprehensive university capstone project at Ghana Communication Technology University. Solves scheduling collisions, ensures timely milestone delivery, and simplifies service coordination between artisans and households across Ghana.",
     github: "https://github.com/Buggybigsam/Smart-Booking-System-for-local-Artisans-",
   },
   {
     id: "face-attendance",
-    title: "Face Recognition Attendance",
-    desc: "Computer vision attendance tracking using OpenCV and deep learning facial embeddings.",
+    title: "FaceTrack Smart Attendance",
+    desc: "Computer vision face recognition tracking using OpenCV and deep learning facial embeddings.",
     image: "/images/face-attendance.jpg",
     url: "https://github.com/Buggybigsam",
     tags: ["Python", "OpenCV", "Machine Learning"],
     fullDesc:
-      "Biometric automated attendance logging system capable of real-time multi-face detection, liveness verification, and instant classroom check-in database exports.",
+      "Biometric automated attendance logging system (FaceTrack) capable of real-time multi-face detection, liveness verification, and instant check-in database exports.",
     github: "https://github.com/Buggybigsam",
   },
   {
@@ -110,7 +110,7 @@ export default function Portfolio() {
                   }
                 }}
               >
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-100">
+                <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#181818]">
                   <Image
                     className="project__thumb object-cover"
                     src={project.image}
@@ -140,24 +140,24 @@ export default function Portfolio() {
       {/* Optional Interactive Detail Modal */}
       {selectedProject && (
         <div
-          className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-fadeIn"
+          className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn"
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200"
+            className="bg-[#111111] rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-[#242424]"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-              <h3 className="text-xl font-bold text-slate-900">{selectedProject.title}</h3>
+            <div className="flex items-center justify-between pb-3 border-b border-[#242424]">
+              <h3 className="text-xl font-bold text-[#F5F5F0]">{selectedProject.title}</h3>
               <button
                 onClick={() => setSelectedProject(null)}
-                className="text-slate-400 hover:text-slate-700 p-1 text-2xl leading-none"
+                className="text-[#9A9A9A] hover:text-[#F5F5F0] p-1 text-2xl leading-none"
               >
                 &times;
               </button>
             </div>
             <div className="py-4">
-              <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-4">
+              <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-[#181818] border border-[#242424]">
                 <Image
                   src={selectedProject.image}
                   alt={selectedProject.title}
@@ -165,21 +165,21 @@ export default function Portfolio() {
                   className="object-cover"
                 />
               </div>
-              <p className="text-slate-600 text-sm leading-relaxed mb-4">
+              <p className="text-[#9A9A9A] text-sm leading-relaxed mb-4">
                 {selectedProject.fullDesc || selectedProject.desc}
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {selectedProject.tags.map((t) => (
                   <span
                     key={t}
-                    className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-semibold"
+                    className="px-3 py-1 bg-[#4D7CFF]/15 text-[#4D7CFF] border border-[#4D7CFF]/30 rounded-full text-xs font-semibold"
                   >
                     {t}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="flex gap-3 justify-end pt-2 border-t border-slate-100">
+            <div className="flex gap-3 justify-end pt-2 border-t border-[#242424]">
               {selectedProject.github && (
                 <a
                   href={selectedProject.github}

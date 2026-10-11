@@ -28,7 +28,7 @@ export default function Testimonials() {
           <blockquote className="testimonial" key={idx}>
             <p style={{ whiteSpace: "pre-line" }}>{item.quote}</p>
             <footer className="testimonial__footer">
-              <span className="testimonial__author">— {item.author}</span>
+              <span className="testimonial__author">{item.author}</span>
             </footer>
           </blockquote>
         ))}

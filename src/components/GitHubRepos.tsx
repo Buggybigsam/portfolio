@@ -90,6 +90,9 @@ const FALLBACK_REPOS: RepoItem[] = [
   },
 ];
 
+// Repos to never show in the Open Source section
+const EXCLUDED_REPOS = ["portfolio", "portifolio", "buggybigsam"];
+
 export default function GitHubRepos() {
   const [repos, setRepos] = useState<RepoItem[]>(FALLBACK_REPOS);
   const [loading, setLoading] = useState(true);
@@ -111,7 +114,13 @@ export default function GitHubRepos() {
         if (Array.isArray(data)) {
           const filtered = data
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            .filter((r: any) => !r.fork)
+            .filter(
+              (r: any) =>
+                !r.fork &&
+                !EXCLUDED_REPOS.includes(r.name.toLowerCase()) &&
+                !r.name.toLowerCase().includes("portfolio") &&
+                !r.name.toLowerCase().includes("portifolio")
+            )
             .slice(0, 6);
           if (filtered.length > 0) {
             setRepos(filtered);
@@ -132,7 +141,7 @@ export default function GitHubRepos() {
         <p className="section__eyebrow">Open Source</p>
         <h2 className="section__title">Code in the wild.</h2>
       </div>
-      <p className="section__sub">Live from my GitHub — updated automatically.</p>
+      <p className="section__sub">Live from my GitHub, updated automatically.</p>
 
       <div className="repos__grid" id="repos-grid" aria-live="polite">
         {loading && (

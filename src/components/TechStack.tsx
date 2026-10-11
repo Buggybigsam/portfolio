@@ -1,13 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
-  Code2,
-  Atom,
   Globe,
   Layers,
-  FileCode,
   Server,
   Database,
   Terminal,
@@ -15,16 +11,13 @@ import {
   Box,
   GitBranch,
   LayoutTemplate,
-  ShieldCheck,
-  Zap,
-  CheckCircle2,
+  type LucideIcon,
 } from "lucide-react";
-import { GithubIcon } from "@/components/SocialIcons";
 
 interface TechItem {
   name: string;
   category: string;
-  icon: any;
+  icon: LucideIcon;
   status: string;
   useCase: string;
 }
@@ -35,21 +28,21 @@ const TECH_LIST: TechItem[] = [
     category: "Languages",
     icon: Cpu,
     status: "Primary Language",
-    useCase: "End-to-end type safety across both frontend components and backend services.",
+    useCase: "End-to-end type safety across frontend components and backend services.",
   },
   {
     name: "Next.js & React 19",
     category: "Frontend",
     icon: Globe,
     status: "Core Framework",
-    useCase: "Server components, fast client hydration, and SEO-friendly web applications.",
+    useCase: "Server components, fast client hydration, and SEO-optimized web applications.",
   },
   {
     name: "Tailwind CSS",
     category: "Styling",
     icon: Layers,
     status: "Design System",
-    useCase: "Building responsive, accessible interfaces with consistent design tokens.",
+    useCase: "Responsive, accessible interfaces with customized dark-mode tokens and micro-interactions.",
   },
   {
     name: "Node.js & Express",
@@ -60,38 +53,38 @@ const TECH_LIST: TechItem[] = [
   },
   {
     name: "Python & FastAPI",
-    category: "AI & APIs",
+    category: "AI & Microservices",
     icon: Terminal,
-    status: "Applied ML",
+    status: "Applied ML & APIs",
     useCase: "Computer vision pipelines with OpenCV and high-throughput async microservices.",
   },
   {
     name: "PostgreSQL & Prisma",
     category: "Databases",
     icon: Database,
-    status: "Primary DB",
-    useCase: "Relational data modeling, ACID transactions, and type-safe migrations.",
+    status: "Primary Relational DB",
+    useCase: "Relational data modeling, ACID transactions, and type-safe database migrations.",
   },
   {
     name: "Docker",
     category: "DevOps",
     icon: Box,
     status: "Containerization",
-    useCase: "Packaging services for consistent local development and cloud deployments.",
+    useCase: "Packaging services for consistent local development and cloud production deployments.",
   },
   {
     name: "Git & GitHub",
     category: "Workflow",
     icon: GitBranch,
-    status: "Version Control",
-    useCase: "Pull requests, branch workflows, issue tracking, and automated CI/CD.",
+    status: "Version Control & CI/CD",
+    useCase: "Pull requests, branch workflows, issue tracking, and automated GitHub Actions workflows.",
   },
   {
     name: "Figma",
-    category: "UI Design",
+    category: "UI/UX Design",
     icon: LayoutTemplate,
     status: "Design Tool",
-    useCase: "Creating wireframes, interactive user flows, and reviewing layout spacing.",
+    useCase: "Wireframing, interactive user journeys, component libraries, and spatial layout specs.",
   },
 ];
 
@@ -99,86 +92,81 @@ export default function TechStack() {
   const [selectedTech, setSelectedTech] = useState<TechItem>(TECH_LIST[1]); // Next.js default
 
   return (
-    <section id="tech-stack" className="relative py-24 sm:py-32 border-t border-white/[0.06] overflow-hidden sasu-section-contain">
-      <div className="sasu-container relative z-10">
-        {/* Section Heading */}
-        <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
-          <p className="sasu-section-mark">
-            CORE TOOLKIT
-          </p>
+    <section id="tech-stack" className="panel tech-stack">
+      {/* Section Header */}
+      <div className="section__header">
+        <p className="section__eyebrow">Tech Stack</p>
+        <h2 className="section__title">Technologies I build with daily.</h2>
+        <p className="text-secondary mt-3 leading-relaxed">
+          I prioritize battle-tested tools with active ecosystems, type safety, and strong performance characteristics.
+        </p>
+      </div>
 
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
-            Technologies I Build With <span className="sasu-gradient-blue">Every Day</span>
-          </h2>
+      {/* Tech Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {TECH_LIST.map((tech) => {
+          const Icon = tech.icon;
+          const isSelected = selectedTech.name === tech.name;
 
-          <p className="text-[#9DA0A6] text-base leading-relaxed">
-            I prioritize battle-tested tools with active ecosystems, great documentation, and strong performance characteristics.
-          </p>
-        </div>
-
-        {/* Tech Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {TECH_LIST.map((tech) => {
-            const Icon = tech.icon;
-            const isSelected = selectedTech.name === tech.name;
-
-            return (
-              <div
-                key={tech.name}
-                onClick={() => setSelectedTech(tech)}
-                className={`sasu-card cursor-pointer transition-all duration-200 ${
-                  isSelected
-                    ? "border-[#3B7EFF] bg-[#141B2D] shadow-[0_0_25px_rgba(59,126,255,0.25)]"
-                    : "hover:border-[#3B7EFF]/40"
-                }`}
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="p-2.5 rounded-xl bg-[#0A0D14] border border-white/[0.08]">
-                    <Icon className="w-5 h-5 text-[#3B7EFF]" />
-                  </div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-[#9DA0A6]">
-                    {tech.category}
-                  </span>
+          return (
+            <div
+              key={tech.name}
+              onClick={() => setSelectedTech(tech)}
+              className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 ${
+                isSelected
+                  ? "bg-[#141B2D] border border-[#4D7CFF] shadow-[0_0_25px_rgba(77,124,255,0.25)]"
+                  : "bg-[#111111] border border-[#242424] hover:border-[#4D7CFF]/50 hover:bg-[#161616]"
+              }`}
+            >
+              <div className="flex items-start justify-between mb-4">
+                <div className="p-3 rounded-xl bg-[#181818] border border-[#242424]">
+                  <Icon className="w-5 h-5 text-[#4D7CFF]" />
                 </div>
-
-                <div className="space-y-1">
-                  <h3 className="text-base font-semibold text-white">
-                    {tech.name}
-                  </h3>
-                  <p className="text-xs font-mono text-[#00F0FF]">
-                    {tech.status}
-                  </p>
-                  <p className="text-xs text-[#C2C9D6] pt-1.5 leading-relaxed">
-                    {tech.useCase}
-                  </p>
-                </div>
+                <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/[0.04] border border-[#242424] text-[#9A9A9A]">
+                  {tech.category}
+                </span>
               </div>
-            );
-          })}
+
+              <div className="space-y-1.5">
+                <h3 className="text-base font-semibold text-[#F5F5F0]">
+                  {tech.name}
+                </h3>
+                <p className="text-xs font-mono text-[#4D7CFF]">
+                  {tech.status}
+                </p>
+                <p className="text-xs text-[#9A9A9A] pt-1 leading-relaxed">
+                  {tech.useCase}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Engineering Principles Ribbon */}
+      <div className="mt-8 p-6 rounded-2xl bg-[#111111] border border-[#242424] flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="space-y-1 text-center md:text-left">
+          <h4 className="text-sm font-semibold text-[#F5F5F0]">
+            Why this stack?
+          </h4>
+          <p className="text-xs text-[#9A9A9A]">
+            TypeScript and Next.js offer rapid development cycles with minimal runtime errors, while PostgreSQL and Docker provide rock-solid scalability.
+          </p>
         </div>
 
-        {/* Engineering Principles Ribbon */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#0F131E] border border-white/[0.08] flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center md:text-left">
-            <h4 className="text-sm font-semibold text-white">
-              Why this stack?
-            </h4>
-            <p className="text-xs text-[#9DA0A6]">
-              TypeScript and Next.js offer rapid development cycles with minimal runtime errors, while PostgreSQL provides rock-solid data integrity.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-mono text-[#9DA0A6]">
-            <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-white">
-              ✓ Type Safe
-            </span>
-            <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-white">
-              ✓ Server-Rendered
-            </span>
-            <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-white">
-              ✓ ACID Compliant
-            </span>
-          </div>
+        <div className="flex flex-wrap items-center justify-center gap-2 text-xs font-mono text-[#9A9A9A]">
+          <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-[#242424] text-[#F5F5F0]">
+            ✓ Type Safe
+          </span>
+          <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-[#242424] text-[#F5F5F0]">
+            ✓ Server-Rendered
+          </span>
+          <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-[#242424] text-[#F5F5F0]">
+            ✓ ACID Compliant
+          </span>
+          <span className="px-3 py-1 rounded-full bg-white/[0.04] border border-[#242424] text-[#F5F5F0]">
+            ✓ Container Ready
+          </span>
         </div>
       </div>
     </section>

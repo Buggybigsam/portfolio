@@ -9,7 +9,7 @@ export default function Capabilities() {
         <article className="capability">
           <h3>Full-Stack Engineering</h3>
           <p>
-            High-performance web applications built with Next.js, React, and TypeScript—designed for speed, responsiveness, and scale.
+            High-performance web applications built with Next.js, React, and TypeScript. Designed for speed, responsiveness, and scale.
           </p>
           <ul>
             <li>Next.js App Router & SSR</li>

@@ -225,6 +225,13 @@ export const PORTFOLIO_DATA = {
         experience: "3+ years",
         description: "Automated endpoint tests, environment variables, and mock servers.",
       },
+      {
+        name: "Graphic Design",
+        tag: "Visual Design",
+        icon: "Palette",
+        experience: "3+ years",
+        description: "Brand identity, visual compositions, typography, and print/digital design assets.",
+      },
     ],
     other: [
       {
@@ -288,7 +295,7 @@ export const PORTFOLIO_DATA = {
     },
     {
       id: "face-attendance",
-      title: "Face Recognition Attendance System",
+      title: "FaceTrack Face Recognition System",
       subtitle: "Automated Biometric Verification & Audit Suite",
       category: "AI & Systems",
       image: "/images/face-attendance.jpg",
@@ -340,36 +347,36 @@ export const PORTFOLIO_DATA = {
       featured: true,
     },
     {
-      id: "cloud-fintech",
-      title: "Transaction & Payment Gateway Hub",
-      subtitle: "High-Reliability Multi-Currency Processing Dashboard",
-      category: "Systems & Backend",
-      image: "/images/cloud-fintech.jpg",
+      id: "apartment-booking",
+      title: "StayNest Apartment Booking",
+      subtitle: "Accommodation & Property Reservation Platform",
+      category: "Full-Stack",
+      image: "/images/apartment-booking.jpg",
       shortDescription:
-        "A financial transaction monitoring system with real-time settlement telemetry, automated reconciliation, and multi-currency conversion.",
+        "Modern accommodation and property reservation system allowing apartment owners to list spaces, manage calendars, and handle guest reservations seamlessly.",
       fullDescription:
-        "A reliable backend service and management dashboard designed to process and audit cross-currency transactions. Built with strict idempotency and audit logs, it gives finance teams immediate visibility into payment gateway health and settlement statuses.",
+        "StayNest is an end-to-end residential booking platform designed for apartment managers and travelers across prime locations. Features verified listings, date picker search, transparent pricing, and instant bookings.",
       features: [
-        "Double-Entry Transaction Ledger with Audit Logs",
-        "Real-Time Gateway Status & Settlement Monitoring",
-        "Automated Reconciliation Between Bank Feeds and App Records",
-        "Multi-Currency Support with Dynamic FX Updates",
-        "Role-Based Security for Finance and Engineering Teams",
+        "Interactive Destination Search with Date and Guest Selectors",
+        "Apartment Owner Listing Management & Availability Calendars",
+        "Transparent Nightly Rates & Seasonal Pricing",
+        "Verified Property Badges & Trust Metrics",
+        "Fast, Mobile-Optimized Reservation Checkout",
       ],
-      technologies: ["Node.js", "TypeScript", "Next.js", "PostgreSQL", "Redis", "Tailwind CSS", "Docker"],
+      technologies: ["TypeScript", "React", "Next.js", "Tailwind CSS", "REST API"],
       challenges:
-        "Preventing duplicate charges during network drops or repeated user clicks on checkout buttons.",
+        "Preventing double-booking and coordinating date availability seamlessly across high-demand apartments.",
       solutions:
-        "Enforced unique client-side idempotency keys backed by atomic Redis lock leases before initiating payment gateway charges.",
-      liveUrl: "https://github.com/Buggybigsam",
-      githubUrl: "https://github.com/Buggybigsam",
+        "Implemented real-time reservation locks and calendar verification before checkout submission.",
+      liveUrl: "https://github.com/Buggybigsam/Apartment-Booking-Platform",
+      githubUrl: "https://github.com/Buggybigsam/Apartment-Booking-Platform",
       featured: true,
     },
   ],
 
   experience: [
     {
-      period: "2024 — Present",
+      period: "2024 to Present",
       role: "Software Developer & Systems Lead",
       organization: "Saint Tech Solutions / Independent Tech Lab",
       location: "Accra, Ghana (Remote)",
@@ -383,7 +390,7 @@ export const PORTFOLIO_DATA = {
       technologies: ["Next.js", "TypeScript", "Node.js", "Python", "FastAPI", "PostgreSQL", "Docker"],
     },
     {
-      period: "2023 — 2024",
+      period: "2023 to 2024",
       role: "Full-Stack Developer",
       organization: "Enterprise Solutions & Digital Consult",
       location: "Hybrid / Accra",
@@ -397,7 +404,7 @@ export const PORTFOLIO_DATA = {
       technologies: ["React", "JavaScript", "Tailwind CSS", "Node.js", "MongoDB", "PostgreSQL"],
     },
     {
-      period: "2022 — 2023",
+      period: "2022 to 2023",
       role: "Frontend & UI Developer",
       organization: "Tech Innovators Studio",
       location: "Accra, Ghana",
@@ -411,7 +418,7 @@ export const PORTFOLIO_DATA = {
       technologies: ["HTML5", "CSS3", "JavaScript", "React", "Figma", "Git"],
     },
     {
-      period: "2020 — 2022",
+      period: "2020 to 2022",
       role: "Computer Science Student & Junior Developer",
       organization: "Foundational Learning & Projects",
       location: "Ghana",

@@ -6,6 +6,7 @@ const NAV_ITEMS = [
   { href: "#hero", label: "Home", icon: "bx-home" },
   { href: "#about", label: "About", icon: "bx-user" },
   { href: "#capabilities", label: "Capabilities", icon: "bx-cog" },
+  { href: "#tech-stack", label: "Tech Stack", icon: "bx-code-alt" },
   { href: "#resume", label: "Resume", icon: "bx-file-blank" },
   { href: "#portfolio", label: "Portfolio", icon: "bx-book-content" },
   { href: "#github", label: "GitHub", icon: "bxl-github" },

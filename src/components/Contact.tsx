@@ -27,45 +27,52 @@ export default function Contact() {
     setToast({ show: true, message, type });
     setTimeout(() => {
       setToast((prev) => ({ ...prev, show: false }));
-    }, 4000);
+    }, 5000);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name.trim() || !formData.message.trim()) {
-      showToast("Please provide your name and a message.", "error");
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      showToast("Please fill in your name, email, and message.", "error");
       return;
     }
 
     setIsSubmitting(true);
 
-    const emailSubject = encodeURIComponent(
-      formData.subject.trim()
-        ? `[Portfolio Contact] ${formData.subject.trim()} - from ${formData.name.trim()}`
-        : `[Portfolio Inquiry] Message from ${formData.name.trim()}`
-    );
-
-    const emailBody = encodeURIComponent(
-      `Hello Ebenezer,\n\nName: ${formData.name.trim()}\nEmail: ${formData.email.trim() || "Not provided"}\nPhone: ${formData.phone.trim() || "Not provided"}\n\nMessage:\n${formData.message.trim()}\n\n---\nSent from your portfolio website`
-    );
-
-    const mailtoUrl = `mailto:buggybigsam@gmail.com?subject=${emailSubject}&body=${emailBody}`;
-
-    // Open mail client
-    window.location.href = mailtoUrl;
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      showToast("Email draft opened! You can now send your message directly to buggybigsam@gmail.com.", "success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "365e4de5-76d5-4f56-abc1-cc455634cb9b",
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() || "Not provided",
+          subject: formData.subject.trim()
+            ? `[Portfolio] ${formData.subject.trim()}`
+            : `[Portfolio Inquiry] from ${formData.name.trim()}`,
+          message: formData.message.trim(),
+          botcheck: "",
+        }),
       });
-    }, 600);
+
+      const result = await response.json();
+
+      if (result.success) {
+        showToast("Message sent! I'll get back to you shortly. 🎉", "success");
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+      } else {
+        showToast(result.message || "Something went wrong. Please try again.", "error");
+      }
+    } catch {
+      showToast("Network error. Please check your connection and try again.", "error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -79,8 +86,13 @@ export default function Contact() {
           <article className="contact__card">
             <h3>Invite me to collaborate</h3>
             <form id="contact-form" className="contact__form" onSubmit={handleSubmit} noValidate>
+              {/* Honeypot spam protection */}
+              <input type="checkbox" name="botcheck" style={{ display: "none" }} />
+
               <div className="form__group">
-                <label htmlFor="cf-name">Your name</label>
+                <label htmlFor="cf-name">
+                  Your name <span style={{ color: "#3B7EFF" }}>*</span>
+                </label>
                 <input
                   type="text"
                   id="cf-name"
@@ -91,17 +103,22 @@ export default function Contact() {
                   placeholder="Jane Doe"
                 />
               </div>
+
               <div className="form__group">
-                <label htmlFor="cf-email">Your email</label>
+                <label htmlFor="cf-email">
+                  Your email <span style={{ color: "#3B7EFF" }}>*</span>
+                </label>
                 <input
                   type="email"
                   id="cf-email"
                   name="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
                   placeholder="you@example.com"
                 />
               </div>
+
               <div className="form__group">
                 <label htmlFor="cf-phone">Phone number</label>
                 <input
@@ -113,6 +130,7 @@ export default function Contact() {
                   placeholder="+233 XXX XXX XXX"
                 />
               </div>
+
               <div className="form__group">
                 <label htmlFor="cf-subject">Subject (optional)</label>
                 <input
@@ -124,8 +142,11 @@ export default function Contact() {
                   placeholder="Project inquiry"
                 />
               </div>
+
               <div className="form__group">
-                <label htmlFor="cf-message">Message</label>
+                <label htmlFor="cf-message">
+                  Message <span style={{ color: "#3B7EFF" }}>*</span>
+                </label>
                 <textarea
                   id="cf-message"
                   name="message"
@@ -136,20 +157,23 @@ export default function Contact() {
                   placeholder="Tell me about your project or idea…"
                 ></textarea>
               </div>
+
               <div className="form__actions">
                 <button
                   type="submit"
                   className="button button--primary"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? "Sending…" : "Send Message"}
                 </button>
               </div>
-              <p className="form__note">Your message will be sent directly to me.</p>
+              <p className="form__note">
+                Your message goes directly to my inbox. No email client needed.
+              </p>
             </form>
 
             <div className="contact__socials-section">
-              <span className="contact__socials-heading">Direct Socials & Messaging</span>
+              <span className="contact__socials-heading">Direct Socials &amp; Messaging</span>
               <div className="contact__socials-list">
                 <a
                   href="https://snapchat.com/t/O2P7Amd8"

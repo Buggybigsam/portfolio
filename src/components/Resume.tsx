@@ -51,7 +51,7 @@ export default function Resume() {
         <div>
           <h3 className="resume__heading">Summary</h3>
           <p className="text-secondary leading-relaxed">
-            Ebenezer A.A Sam — Full‑stack web developer and IT specialist passionate about system architecture,
+            Ebenezer A.A Sam, Full-stack web developer and IT specialist passionate about system architecture,
             resilient back‑end services, and modern digital experiences. I craft efficient, interactive
             applications that feel effortless for the people who use them, backed by strong fundamentals in
             information technology, systems engineering, and scalable web solutions.
@@ -85,7 +85,7 @@ export default function Resume() {
           <h3 className="resume__heading">Education</h3>
           <ul className="about__timeline">
             <li>
-              <span className="about__timeline-year">2023 — 2026</span>
+              <span className="about__timeline-year">2023 to 2026</span>
               <div className="about__timeline-role">
                 Bachelor Of Science in Information Technology · Ghana Communication Technology University
               </div>

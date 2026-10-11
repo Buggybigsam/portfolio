@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Capabilities from "@/components/Capabilities";
+import TechStack from "@/components/TechStack";
 import Resume from "@/components/Resume";
 import Portfolio from "@/components/Portfolio";
 import GitHubRepos from "@/components/GitHubRepos";
@@ -20,6 +21,7 @@ export default function Home() {
         <Hero />
         <About />
         <Capabilities />
+        <TechStack />
         <Resume />
         <Portfolio />
         <GitHubRepos />
