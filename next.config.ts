@@ -8,7 +8,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   // If deployed to a project page e.g. https://<user>.github.io/<repo>/
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || (isGithubActions ? "/portfolio" : undefined),
+  // basePath can be supplied via environment variable NEXT_PUBLIC_BASE_PATH
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || undefined,
 };
 
 export default nextConfig;

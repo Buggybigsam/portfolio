@@ -90,7 +90,7 @@ export default function Hero() {
           </a>
           <a
             className="button button--outline"
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/Sam_Ebenezer_Akwasi_Afrimu_CV.pdf`}
+            href="/Sam_Ebenezer_Akwasi_Afrimu_CV.pdf"
             download="Sam_Ebenezer_Akwasi_Afrimu_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"

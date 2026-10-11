@@ -95,21 +95,21 @@ export default function Portfolio() {
         </div>
         <div className="projects__list">
           {PROJECTS.map((project) => (
-            <article
-              className="project project--image cursor-pointer"
-              key={project.id}
-              onClick={() => setSelectedProject(project)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  setSelectedProject(project);
-                }
-              }}
-              aria-label={`View details for ${project.title}`}
-            >
-              <div className="project__link-block">
+            <article className="project project--image" key={project.id}>
+              <a
+                className="project__link-block"
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open ${project.title}`}
+                onClick={(e) => {
+                  // Allow direct click or modal preview if right-clicked or clicked with modifier
+                  if (e.altKey || e.metaKey) {
+                    e.preventDefault();
+                    setSelectedProject(project);
+                  }
+                }}
+              >
                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#181818]">
                   <Image
                     className="project__thumb object-cover"
@@ -128,10 +128,10 @@ export default function Portfolio() {
                     ))}
                   </ul>
                   <span className="project__open">
-                    Details & Demo ↗
+                    View ↗
                   </span>
                 </div>
-              </div>
+              </a>
             </article>
           ))}
         </div>
