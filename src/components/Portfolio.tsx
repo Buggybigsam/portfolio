@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { withBasePath } from "@/utils/basePath";
 
 interface ProjectItem {
   id: string;
@@ -113,7 +114,7 @@ export default function Portfolio() {
                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#181818]">
                   <Image
                     className="project__thumb object-cover"
-                    src={project.image}
+                    src={withBasePath(project.image)}
                     alt={project.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -159,7 +160,7 @@ export default function Portfolio() {
             <div className="py-4">
               <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-[#181818] border border-[#242424]">
                 <Image
-                  src={selectedProject.image}
+                  src={withBasePath(selectedProject.image)}
                   alt={selectedProject.title}
                   fill
                   className="object-cover"

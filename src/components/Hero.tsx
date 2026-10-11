@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { withBasePath } from "@/utils/basePath";
 
 const TYPED_ITEMS = [
   "Full‑Stack Developer",
@@ -90,7 +91,7 @@ export default function Hero() {
           </a>
           <a
             className="button button--outline"
-            href="/Sam_Ebenezer_Akwasi_Afrimu_CV.pdf"
+            href={withBasePath("/Sam_Ebenezer_Akwasi_Afrimu_CV.pdf")}
             download="Sam_Ebenezer_Akwasi_Afrimu_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"

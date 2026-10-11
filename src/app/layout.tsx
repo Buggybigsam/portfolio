@@ -66,7 +66,7 @@ export const metadata: Metadata = {
       "Ebenezer A.A Sam — IT Specialist & Full-Stack Developer based in Ghana. Founder of Saint Tech Solutions. Explore projects, engineering capabilities, and open source work.",
     images: [
       {
-        url: "/images/ebenezer-sam.png",
+        url: "/portfolio/images/ebenezer-sam.png",
         width: 1200,
         height: 630,
         alt: "Ebenezer A.A Sam — IT & Full-Stack Software Developer",
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     title: "Ebenezer A.A Sam | IT & Full-Stack Software Developer",
     description:
       "Ebenezer A.A Sam — IT Specialist & Full-Stack Developer based in Ghana. Founder of Saint Tech Solutions.",
-    images: ["/images/ebenezer-sam.png"],
+    images: ["/portfolio/images/ebenezer-sam.png"],
   },
   alternates: {
     canonical: "https://buggybigsam.github.io/portfolio",

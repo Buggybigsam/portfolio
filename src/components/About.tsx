@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/utils/basePath";
 
 export default function About() {
   return (
@@ -32,7 +33,7 @@ export default function About() {
           <div className="about__portrait-frame">
             <Image
               className="about__portrait-img"
-              src="/images/ebenezer-sam.png"
+              src={withBasePath("/images/ebenezer-sam.png")}
               alt="Portrait of Ebenezer A.A Sam"
               fill
               sizes="(max-width: 768px) 280px, 320px"
